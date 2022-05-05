@@ -1,3 +1,16 @@
+<?php //$base = __DIR__ . '/../'; ?>
+<?php 
+  function url(){
+    if(isset($_SERVER['HTTPS'])){
+        $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
+    }
+    else{
+        $protocol = 'http';
+    }
+    return $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +20,15 @@
     <meta name="author" content="EtaNetwork(Daud)">
     <meta name="keyword" content="Appliance Controller (IOT)">
     <link rel="shortcut icon" href="img/favicon.png">
+    <meta property="og:title" content="IOT Switch" />
+    <meta property="og:description" content="IOT Appliance Switch Interface" />
+    <meta property="og:image" content="<?php echo(url().'images/switch.png'); ?>" />
+    <meta property="og:url" content="<?php echo(url()); ?>">
+    <meta name="twitter:card" content="<?php echo(url().'images/switch.png'); ?>">
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:site_name" content="IOT Switch">
+    <meta property="og:type" content="website" />
+    <meta name="twitter:image:alt" content="<?php echo(url().'images/switch.png'); ?>">
     <title>Device Controller</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
