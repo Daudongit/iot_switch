@@ -12,7 +12,7 @@
     {
       session_unset();
       //header('Location: '.$_SERVER['PHP_SELF']);
-      header("Location: index.html"); // Return to frontend (index.html) 
+      header("Location: index.php"); // Return to frontend (index.php) 
       exit;
     }
 
@@ -41,13 +41,13 @@
         }
         else
         {
-          header("Location: index.html"); // Return to frontend (index.html
+          header("Location: index.php"); // Return to frontend (index.php
         }   
       }
       else
       {
         session_write_close();
-        header("Location: index.html"); // Return to frontend (index.html) 
+        header("Location: index.php"); // Return to frontend (index.php) 
       }
     }
     else 
